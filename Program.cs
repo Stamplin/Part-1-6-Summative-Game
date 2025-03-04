@@ -25,11 +25,6 @@ namespace Part_1_6_Summative_Game
                 die2.RollDie();
                 Console.WriteLine("You rolled a " + die1 + " and a " + die2);
             }
-            
-
-
-
-
 
             //Game start
             bool gameActive = true;
@@ -75,6 +70,16 @@ namespace Part_1_6_Summative_Game
                     {
                         Console.WriteLine("You have selected to bet on a double!");
                         RollDice();
+                        //if (die1 == die2)
+                        //{
+                        //    balance += bet * 2;
+                        //    Console.WriteLine("You won " + bet * 2 + "$!");
+                        //}
+                        //else
+                        //{
+                        //    Console.WriteLine("You lost " + bet + "$!");
+                        //}
+                        //Betting = false;
                         
                     }
                 }
