@@ -9,18 +9,20 @@ namespace Part_1_6_Summative_Game
             Die die1, die2;
             die1 = new Die();
             die2 = new Die();
-            //dice casino game
-            Console.WriteLine("                                                                   \r\n ____  _            _____         _            _____               \r\n|    \\|_|___ ___   |     |___ ___|_|___ ___   |   __|___ _____ ___ \r\n|  |  | |  _| -_|  |   --| .'|_ -| |   | . |  |  |  | .'|     | -_|\r\n|____/|_|___|___|  |_____|__,|___|_|_|_|___|  |_____|__,|_|_|_|___|\r\n                                                                   ");
-            Console.WriteLine("You will be rolling two dice, and betting on the ending of the dice. \nIf you pick the correct one you win, else you lose!");
-            Console.WriteLine();
             //initial balance
             double balance = 100;
+
 
 
             //Game start
             bool gameActive = true;
             while (gameActive)
             {
+
+                //dice casino game
+                Console.WriteLine("                                                                   \r\n ____  _            _____         _            _____               \r\n|    \\|_|___ ___   |     |___ ___|_|___ ___   |   __|___ _____ ___ \r\n|  |  | |  _| -_|  |   --| .'|_ -| |   | . |  |  |  | .'|     | -_|\r\n|____/|_|___|___|  |_____|__,|___|_|_|_|___|  |_____|__,|_|_|_|___|\r\n                                                                   ");
+                Console.WriteLine("You will be rolling two dice, and betting on the ending of the dice. \nIf you pick the correct one you win, else you lose!");
+                Console.WriteLine();
                 Console.WriteLine("Your balance is: " + balance);
                 Console.WriteLine("How much would you like to bet?");
                 double bet = 0;
@@ -61,16 +63,27 @@ namespace Part_1_6_Summative_Game
                     Console.WriteLine("4. Odd Sum (If the sum of the dice is odd, you will win your bet!)");
 
                     string guess = Console.ReadLine();
-
+                    //double
                     if (guess == "1") 
                     {
+                        Console.Clear();
                         Console.WriteLine("You have selected to bet on a double!");
                         RollAndDraw(die1, die2);
                         Console.WriteLine($"{die1.Roll} and {die2.Roll}");
+                        //checking if double
+                        if (die1.Roll == die2.Roll)
+                        {
+                            Console.WriteLine("You won " + bet * 2 + "$!");
+                            balance += bet * 2;
+                        }
+                        else
+                        {
+                            Console.WriteLine("You lost " + bet + "$!");
+                        }
                         Console.WriteLine("Press ENTER to continue.");
                         Console.ReadLine();
                         Console.Clear();
-
+                        Betting = false;
                     }
                 }
 
