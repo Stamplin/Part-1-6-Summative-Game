@@ -51,6 +51,7 @@ namespace Part_1_6_Summative_Game
                 bool Betting = true;
                 while (Betting)
                 {
+                    Console.Clear();
                     Console.WriteLine();
                     //what would you like to bet on?
                     Console.WriteLine("What would you like to bet on?");
@@ -81,6 +82,7 @@ namespace Part_1_6_Summative_Game
                         {
                             Console.WriteLine("You won " + bet * 2 + "$!");
                             balance += bet * 2;
+                            Betting = false;
                         }
                         else
                         {
@@ -88,8 +90,8 @@ namespace Part_1_6_Summative_Game
                         }
                         Console.WriteLine("Press ENTER to continue.");
                         Console.ReadLine();
-                        Console.Clear();
                         Betting = false;
+                        Console.Clear();
                     }
                     //not double
                     else if (guess == "2")
@@ -103,6 +105,7 @@ namespace Part_1_6_Summative_Game
                         {
                             Console.WriteLine("You won " + bet / 2 + "$!");
                             balance += bet / 2;
+                            Betting = false;
                         }
                         else
                         {
@@ -110,8 +113,8 @@ namespace Part_1_6_Summative_Game
                         }
                         Console.WriteLine("Press ENTER to continue.");
                         Console.ReadLine();
-                        Console.Clear();
                         Betting = false;
+                        Console.Clear();
                     }
                     //even sum
                     else if (guess == "3")
@@ -125,6 +128,7 @@ namespace Part_1_6_Summative_Game
                         {
                             Console.WriteLine("You won " + bet + "$!");
                             balance += bet;
+                            Betting = false;
                         }
                         else
                         {
@@ -132,6 +136,7 @@ namespace Part_1_6_Summative_Game
                         }
                         Console.WriteLine("Press ENTER to continue.");
                         Console.ReadLine();
+                        Betting = false;
                         Console.Clear();
                     }
 
@@ -147,13 +152,15 @@ namespace Part_1_6_Summative_Game
                         {
                             Console.WriteLine("You won " + bet + "$!");
                             balance += bet;
+                            Betting = false;
                         }
                         else
                         {
                             Console.WriteLine("You lost " + bet + "$!");
                         }
                         Console.WriteLine("Press ENTER to continue.");
-                        Console.ReadLine();
+                        Betting = false;
+                        Console.Clear();
 
 
 
